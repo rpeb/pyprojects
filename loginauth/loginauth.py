@@ -4,12 +4,6 @@ user_data={}
 def password_check(x):
     if(len(x) < 6):
         return 0 
-while True:   
-import getpass, sys
-user_data={}
-def password_check(x):
-    if(len(x) < 6):
-        return 0
 while(True):    
     choice=int(input("Press 1 for sign up or 2 if you're an existing user: "))  
     if choice==1:
@@ -31,10 +25,6 @@ while(True):
             writer=csv.writer(csv_file)
             for key, value in user_data.items():
                 writer.writerow([key, value])
-    elif choice==2:
-        with open('userdata.csv') as csv_file:
-            reader=csv.reader(csv_file)
-            user_data=dict(reader)
     elif choice==2:
         username=input("Enter your username: ")
         if username in user_data:
